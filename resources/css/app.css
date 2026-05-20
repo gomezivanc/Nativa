@@ -1,0 +1,468 @@
+@import "@fortawesome/fontawesome-free/css/all.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap"); */
+
+.btn_principal {
+    @apply flex space-x-2 px-2 py-3 rounded-lg bg-[#01356A] text-white text-sm font-bold whitespace-nowrap hover:bg-[#001E41] focus:bg-[#001E41] focus:outline-none centrar;
+  }
+
+.color_principal{
+    @apply bg-[#01356A]
+}
+
+.fondo_color{
+    @apply bg-gradient-to-t from-[#002F65] to-[#008BBF]
+}
+.fondo_color_right{
+    @apply bg-gradient-to-r from-[#002F65] to-[#008BBF]
+}
+
+.centrar{
+    @apply flex items-center justify-center
+}
+
+.boton_secundario {
+    @apply w-40 h-10 max-lg:w-28 max-lg:h-4 centrar text-lg max-lg:text-xs text-[#002f65] font-bold p-4  bg-[#D9E8F0] border border-transparent shadow-sm transition-all duration-500 ease-in-out hover:bg-[#BDDBEC] hover:text-[#002f65] transform hover:-translate-y-1 hover:scale-100 dark:text-gray-50 rounded-lg
+}
+
+.letra_principal{
+    @apply text-[#01356A]
+}
+
+.custom-icon-size {
+  @apply  text-3xl
+  }
+
+.btn-indigo {
+    @apply px-6 py-3 rounded bg-indigo-700 text-white text-sm font-bold whitespace-nowrap hover:bg-orange-500 focus:bg-orange-500;
+  }
+
+.titulo_tabla{
+    @apply px-6 pt-5 pb-4 font-roboto text-gray-600 text-base;
+}
+
+.contenido_tabla{
+    @apply px-6 py-4 font-normal text-gray-900 whitespace-nowrap font-roboto text-sm;
+}
+
+
+
+.contenedor_boton_tabla{
+    @apply p-1 border-none transform hover:-translate-y-1
+}
+
+.editar_tabla{
+    @apply w-6 h-6 text-[#026882] fill-current group-hover:text-gray-300 focus:text-gray-300
+}
+.token-column {
+    max-width: 200px; /* Ancho máximo de la columna */
+    overflow: hidden; /* Oculta cualquier contenido desbordado */
+    white-space: nowrap; /* Evita el salto de línea */
+    text-overflow: ellipsis; /* Agrega '...' si el texto excede */
+}
+.eliminar_tabla{
+    @apply w-6 h-6 text-red-600 fill-current group-hover:text-gray-300 focus:text-gray-300
+}
+
+.activar_tabla{
+    @apply w-7 h-7 -ml-[0.15rem] -mt-[0.15rem] text-green-600 fill-current group-hover:text-gray-300 focus:text-gray-600
+}
+
+:root {
+    font-size: 14px; /* O 13px si lo quieres aún más compacto */
+}
+
+.p-component {
+    font-size: 0.9rem !important;
+}
+
+.p-datatable.p-datatable-sm .p-datatable-thead > tr > th,
+.p-datatable.p-datatable-sm .p-datatable-tbody > tr > td {
+    padding: 0.5rem 0.5rem !important; /* Reduce el espacio interno de las celdas */
+}
+
+  .btn-spinner,
+  .btn-spinner:after {
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+  }
+
+  .btn-spinner {
+    font-size: 10px;
+    position: relative;
+    text-indent: -9999em;
+    border-top: 0.2em solid white;
+    border-right: 0.2em solid white;
+    border-bottom: 0.2em solid white;
+    border-left: 0.2em solid transparent;
+    transform: translateZ(0);
+    animation: spinning 1s infinite linear;
+  }
+
+  @keyframes spinning {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+
+.material-icons {
+    font-family: "FontAwesome";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: "liga";
+    -webkit-font-smoothing: antialiased;
+}
+
+.react-dropdown-tree-select .dropdown{
+    display: inline-block;
+    width: 100%;
+}
+
+.react-dropdown-tree-select .dropdown .dropdown-content, .react-dropdown-tree-select .dropdown-trigger{
+    width: 100%;
+    padding: 0!important;
+}
+.react-dropdown-tree-select .dropdown .tag-list{
+    display: flex;
+}
+.react-dropdown-tree-select .dropdown .tag-list .tag-item{
+    margin: 2px;
+}
+.react-dropdown-tree-select .dropdown .tag-list .tag-item:last-child{
+    flex-grow:1;
+}
+.react-dropdown-tree-select .dropdown-trigger input.search{
+    font-size: 0.75rem;
+    width: 100%;
+    padding: 0.2rem;
+}
+
+.react-dropdown-tree-select .dropdown .dropdown-trigger.arrow.bottom:after, .react-dropdown-tree-select .dropdown .dropdown-trigger.arrow.top:after {
+    position: absolute;
+    top: 30%;
+    right: 0;
+}
+
+
+.react-dropdown-tree-select .dropdown-trigger > span:after {
+    font-size: 12px;
+    color: #555;
+}
+
+.react-dropdown-tree-select .toggle {
+    font: normal normal normal 18px/1 "FontAwesome";
+    color: #555;
+    white-space: pre;
+    margin: 0 4px;
+}
+
+.react-dropdown-tree-select .toggle.collapsed::after {
+    cursor: pointer;
+    content: "\f0fe";
+    vertical-align: middle;
+}
+
+.react-dropdown-tree-select .toggle.expanded::after {
+    cursor: pointer;
+    content: "\f146";
+    vertical-align: middle;
+}
+
+/* checkbox styles */
+.react-dropdown-tree-select .checkbox-item {
+    position: relative;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.75rem;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: 0;
+    vertical-align: middle;
+}
+
+.react-dropdown-tree-select .checkbox-item:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #aaa;
+    transition: all 0.3s ease-in-out;
+}
+
+.react-dropdown-tree-select .checkbox-item:checked:before {
+    height: 50%;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    border-top-style: none;
+    border-right-style: none;
+    border-color: #2196f3;
+}
+
+.acomodar {
+    display: flex;
+    padding: 15px;
+}
+
+.acomodarBoton {
+    margin-left: 10px;
+}
+
+/* Badges */
+.badge {
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1;
+    padding: .375rem .5625rem;
+    font-weight: normal;
+}
+
+.badge.badge-pill {
+    border-radius: 10rem;
+}
+
+/*Badge outlined variations*/
+.badge-outline-primary {
+    color: #f2125e;
+    border: 1px solid #f2125e;
+}
+
+.badge-outline-secondary {
+    color: #392ccd;
+    border: 1px solid #392ccd;
+}
+
+.badge-outline-success {
+    color: #17c964;
+    border: 1px solid #17c964;
+}
+
+.badge-outline-info {
+    color: #2b80ff;
+    border: 1px solid #2b80ff;
+}
+
+.badge-outline-warning {
+    color: #ff8300;
+    border: 1px solid #ff8300;
+}
+
+.badge-outline-danger {
+    color: #ff0000;
+    border: 1px solid #ff0000;
+}
+
+.badge-outline-light {
+    color: #e6e6e6;
+    border: 1px solid #e6e6e6;
+}
+
+.badge-outline-dark {
+    color: #000000;
+    border: 1px solid #000000;
+}
+
+.bg-custom-blue {
+    background-color: #60a7ff;
+}
+
+.p-speeddial
+{
+    z-index: 1000!important;
+
+}
+.p-speeddial-list {
+    max-height: 93vh; /* Evita que crezca demasiado */
+    overflow-y: auto !important; /* Agrega scroll si hay muchos elementos */
+}
+.p-timeline-event-opposite {
+    display: none;
+}
+
+/* Estilos del Scrollbar */
+.p-speeddial-list::-webkit-scrollbar {
+    width: 4px;
+}
+
+.p-speeddial-list::-webkit-scrollbar-thumb {
+    background-color: rgba(150, 150, 150, 0.2);
+    border-radius: 10px;
+}
+
+.p-speeddial-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Para Firefox */
+.p-speeddial-list {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(150, 150, 150, 0.2) transparent;
+}
+
+/* Estilos generales para la scrollbar */
+::-webkit-scrollbar {
+    width: 12px; /* Ancho de la scrollbar */
+    height: 12px; /* Altura de la scrollbar (para scroll horizontal) */
+}
+
+/* Estilo del track (fondo de la scrollbar) */
+::-webkit-scrollbar-track {
+    background: transparent; /* Fondo transparente */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Estilo del thumb (la barra que se mueve) */
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3); /* Color del thumb con transparencia */
+    border-radius: 10px; /* Bordes redondeados */
+    border: 3px solid transparent; /* Borde transparente para que no se vea feo */
+    background-clip: content-box; /* Asegura que el color no se extienda más allá del contenido */
+}
+
+/* Estilo del thumb cuando se pasa el mouse por encima */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.5); /* Color más oscuro al hacer hover */
+    background-clip: content-box; /* Asegura que el color no se extienda más allá del contenido */
+
+}
+
+/* Estilo del thumb cuando se está arrastrando */
+::-webkit-scrollbar-thumb:active {
+    background: rgba(0, 0, 0, 0.7); /* Color aún más oscuro al arrastrar */
+    background-clip: content-box; /* Asegura que el color no se extienda más allá del contenido */
+
+}
+
+/* Estilo de los botones de la scrollbar (flechas) */
+::-webkit-scrollbar-button {
+    display: none; /* Ocultar los botones de la scrollbar */
+}
+/* 🔹 Ajustes para pantallas pequeñas */
+@media (max-height: 768px) {
+    .p-speeddial-list {
+        max-height: 60vh; /* Aumenta el tamaño en móviles */
+        overflow-y: auto !important; /* Scroll vertical si es necesario */
+        display: block !important;
+
+    }
+
+    .btn-open {
+        margin-right: 10px!important;
+    }
+}
+
+/* 🔹 Ajustes para pantallas muy pequeñas (ejemplo: menos de 500px) */
+@media (max-height: 520px) {
+    .p-speeddial-list {
+        max-height: 70vh; /* Más espacio en pantallas pequeñas */
+        padding-bottom: 32px !important;
+        overflow-y: auto !important; /* Scroll vertical si es necesario */
+        display: block !important;
+
+
+    }
+    .btn-open {
+        margin-right: 10px!important;
+    }
+}
+
+
+/* Estilos adicionales para el dashboard */
+:root {
+    --blue-500: #3b82f6;
+    --green-500: #10b981;
+    --red-500: #ef4444;
+    --yellow-500: #f59e0b;
+    --purple-500: #8b5cf6;
+  }
+
+  .p-card .p-card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #374151;
+  }
+
+  .p-card .p-card-content {
+    padding: 0;
+  }
+
+  .p-card .p-card-body {
+    padding: 1.25rem;
+  }
+
+  .p-progressbar {
+    background: #e5e7eb;
+  }
+
+  .p-progressbar .p-progressbar-value {
+    border-radius: 0.25rem;
+  }
+
+  .p-tabview .p-tabview-nav {
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+    border: none;
+    color: #6b7280;
+    padding: 1rem 1.25rem;
+  }
+
+  .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+    border-bottom: 2px solid var(--blue-500);
+    color: var(--blue-500);
+  }
+
+  .p-dropdown {
+    border-radius: 0.375rem;
+  }
+
+  .p-calendar {
+    border-radius: 0.375rem;
+  }
+
+  .p-button {
+    border-radius: 0.375rem;
+  }
+
+  .p-badge {
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+  }
+
+    .section-card {
+        background: #f8f9fa;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .classification-row {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr auto;
+        gap: 12px;
+        align-items: end;
+    }
+

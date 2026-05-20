@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="960" viewBox="0 0 1600 960">
+  <defs>
+    <linearGradient id="linear-gradient" y1="1" x2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#002f65"/>
+      <stop offset="1" stop-color="#008bbf"/>
+    </linearGradient>
+    <clipPath id="clip-FONDO_2_1">
+      <rect width="1600" height="960"/>
+    </clipPath>
+  </defs>
+  <g id="FONDO_2_1" data-name="FONDO_2 – 1" clip-path="url(#clip-FONDO_2_1)">
+    <rect width="1600" height="960" fill="url(#linear-gradient)"/>
+    <g id="Grupo_270" data-name="Grupo 270">
+      <circle id="Elipse_54" data-name="Elipse 54" cx="300" cy="300" r="300" transform="translate(-268 667)" fill="#fff" opacity="0.04"/>
+      <circle id="Elipse_53" data-name="Elipse 53" cx="320" cy="320" r="320" transform="translate(-268 627)" fill="#fff" opacity="0.04"/>
+    </g>
+    <g id="Grupo_269" data-name="Grupo 269" transform="translate(16 -37)">
+      <circle id="Elipse_52" data-name="Elipse 52" cx="300" cy="300" r="300" transform="translate(1284 -282)" fill="#fff" opacity="0.11"/>
+      <circle id="Elipse_51" data-name="Elipse 51" cx="327.5" cy="327.5" r="327.5" transform="translate(1229 -282)" fill="#fff" opacity="0.06"/>
+    </g>
+  </g>
+</svg>

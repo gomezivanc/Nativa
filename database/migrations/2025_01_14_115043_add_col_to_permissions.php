@@ -1,0 +1,35 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::table('permissions', function (Blueprint $table) {
+            $table->softDeletes();
+            $table->foreignId('id_menu')->nullable()->constrained('menus');
+            $table->string('name_module')->nullable()->comment('Nombre del modulo padre');
+        });
+    }
+    
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('permissions', function (Blueprint $table) {
+            $table->dropSoftDeletes();            
+            $table->dropColumn('name_module');
+        });
+    }
+};
