@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title inertia>{{ config('app.name', 'Laravel') }}</title>
-    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+    <link rel="shortcut icon" href="{{ asset('favicon.jpeg') }}" />
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
     {{-- <script type="text/javascript" src="http://localhost:8082/web-apps/apps/api/documents/api.js"></script> --}}

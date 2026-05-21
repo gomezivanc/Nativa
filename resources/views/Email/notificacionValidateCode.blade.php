@@ -162,7 +162,7 @@
         
         <div class="footer">
             <p>Todos los derechos reservados &copy; {{ date('Y') }} {{ $data['aplicacion'] }}</p>
-            <p>Turrisystem SAS</p>
+            <p> SAS</p>
         </div>
     </div>
 </body>

@@ -155,7 +155,7 @@ const Logins = ({ status, props, success, googleReCaptchaProps, }) => {
             <div className="flex-col w-full h-[100%] centrar">
                 <div className="centrar -mt-20 mb-5">
                     <img
-                        src="images/PNG/Turrisystesm.png"
+                        src="images/PNG/"
                         className="hidden max-lg:flex h-28 max-lg:h-16 "
                     />
                 </div>

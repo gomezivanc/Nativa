@@ -241,9 +241,9 @@ export default function ValidateCode() {
     const footer = (
         <div className="flex justify-content-center">
             <img
-                src={`${ziggy.url}/images/SVG/turrisystem_blanco.svg` || "/placeholder.svg"}
+                src={`${ziggy.url}/images/SVG/` || "/placeholder.svg"}
                 className="footer-logo"
-                alt="Turrisystem"
+                alt=""
             />
         </div>
     );

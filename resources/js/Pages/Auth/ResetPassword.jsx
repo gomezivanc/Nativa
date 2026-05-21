@@ -90,7 +90,7 @@ export default function ResetPassword({ status }) {
             <Head title="Restablecer contraseña" />
             <div className='flex-col w-full h-[100%] mt-12'>
                 <div className='centrar '>
-                    <img src="images/PNG/Turrisystesm.png" className="hidden max-lg:flex h-28 max-lg:h-16 mt-7 max-lg:mt-4" />
+                    <img src="images/PNG/" className="hidden max-lg:flex h-28 max-lg:h-16 mt-7 max-lg:mt-4" />
                 </div>
 
                 <div className='w-full centrar flex-col mt-2 lg:mt-5 2xl:mt-12 mb-8'>

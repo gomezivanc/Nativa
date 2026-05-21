@@ -1,14 +1,3 @@
-<!--
-* editar.blade.php
-* Ruta:              papelnotarial/resources/views/correo/plantilla_correo.blade.php
-* Fecha Creación:    Mar/2022
-*
-* Plantilla para enviar correos
-*
-* @copyright        2022 Turrisystem Ltda.
-* @version          2022
-*
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -144,7 +133,7 @@
                 <td style="background:#fbfbfb; padding-bottom:30px;" align="center">
                     <span
                         style="font-size:12px;color:rgba(0,0,0,0.75);font-weight:200;font-family:Roboto,sans-serif,Trebuchet MS">
-                        Todos los derechos Reservados Turrisystem SA © {{ date('Y') }}
+                        Todos los derechos Reservados  SA © {{ date('Y') }}
                     </span>
                 </td>
             </tr>

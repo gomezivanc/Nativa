@@ -95,7 +95,7 @@
                             <tr>
                                 <td style="background-color: #fafafa; padding: 20px; border-top: 1px solid #eeeeee; text-align: center;">
                                     <span style="font-size: 11px; color: #95a5a6; line-height: 18px;">
-                                        Este es un mensaje automático generado por Turrisystem.<br>
+                                        Este es un mensaje automático generado por .<br>
                                         Si tiene dudas, contacte al área de soporte técnico.
                                     </span>
                                 </td>
@@ -108,7 +108,7 @@
                             <tr>
                                 <td style="padding: 30px 0;" align="center">
                                     <span style="font-size: 12px; color: #bdc3c7;">
-                                        Todos los derechos Reservados Turrisystem SA © {{ date('Y') }}
+                                        Todos los derechos Reservados  SA © {{ date('Y') }}
                                     </span>
                                 </td>
                             </tr>

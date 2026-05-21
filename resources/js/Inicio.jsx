@@ -57,9 +57,9 @@ export default function Inicio() {
         {/* Footer */}
         <div className="w-full mb-6">
             <img
-                src={`${ziggy.url}/images/SVG/turrisystem_blanco.svg`}
+                src={`${ziggy.url}/images/SVG.svg`}
                 className="w-40 mx-auto opacity-80 max-md:w-28"
-                alt="Turrisystem Logo Blanco"
+                alt=" Logo Blanco"
             />
         </div>
     </div>

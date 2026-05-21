@@ -64,7 +64,7 @@ export default function Recovery({ status }) {
             <div className="flex-col w-full h-[100%] centrar">
                 <div className="centrar ">
                     <img
-                        src="images/PNG/Turrisystesm.png"
+                        src="images/PNG/"
                         className="hidden max-lg:flex h-28 max-lg:h-16 mt-7 max-lg:mt-4"
                     />
                 </div>
