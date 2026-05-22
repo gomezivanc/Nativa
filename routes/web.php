@@ -69,7 +69,7 @@ Route::middleware([
         Route::get('/menus/all', [MenuController::class, 'allMenus'])->name('menus.all'); //devuelve los menús jerarquicamente para un treeselect
         Route::get('/routes/all', [RouteController::class, 'index'])->name('routes.index'); //devuelve el select de las rutas
 
-        Route::resource('menus', MenuController::class); //crud de menús
+        Route::resource('menus', MenuController::class)->except(['update']); //crud de menús
         Route::post('menus/{menu}/update', [MenuController::class, 'update'])->name('menus.update');
         Route::get('menus-list', [MenuController::class, 'list'])->name('menus.list');
         Route::put('/menuscambios/cambioEstado', [MenuController::class, 'cambioEstado'])->name('menu.cambioEstado'); //crud de menús
@@ -125,7 +125,7 @@ Route::middleware([
             Route::resource('utilities/manual-usuario',ManualUsuariosController::class);
             Route::get('utilities/manual-usuario-list',[ManualUsuariosController::class,'list'])->name('manual-usuario.list');
 
-            Route::resource('/roles', RolController::class);
+            Route::resource('/roles', RolController::class)->except(['index', 'store', 'update']);
             Route::get('rol-list', [RolController::class, 'list'])->name('roles.list');
             Route::get('rol-detail/{id}', [RolController::class, 'detail'])->name('roles.detail');
             Route::get('/rol/getPermissions', [RolController::class, 'getPermissions'])->name('roles.getPermissions');
@@ -143,7 +143,7 @@ Route::middleware([
             Route::get('/usuarios/personas', [UsuarioController::class, 'getPersonasCentralizado'])->name('usuarios.personas');
             Route::get('usuarios.list', [UsuarioController::class, 'list'])->name('usuarios.list');
             Route::resource('usuarios', UsuarioController::class)->except([
-                'update'
+                'index', 'store', 'edit', 'update'
             ]);
 
             Route::get('usuarios-detail/{id}', [UsuarioController::class, 'detail'])->name('usuarios.detail');
