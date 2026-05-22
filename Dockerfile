@@ -27,7 +27,7 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Node.js 20 via NodeSource
+# Install Node.js 20
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
     && apt-get install -y nodejs \
     && apt-get clean \
@@ -38,10 +38,10 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 WORKDIR /app
 
-# Copy composer files
-COPY composer.json composer.lock ./
+# Copiar TODO el proyecto primero
+COPY . .
 
-# Install PHP dependencies ignorando restricciones de plataforma del lock generado en Windows
+# Instalar dependencias PHP
 RUN COMPOSER_ALLOW_SUPERUSER=1 composer install \
     --optimize-autoloader \
     --no-dev \
@@ -49,16 +49,10 @@ RUN COMPOSER_ALLOW_SUPERUSER=1 composer install \
     --no-interaction \
     --ignore-platform-reqs
 
-# Copy package files
-COPY package.json package-lock.json ./
-
-# Install Node dependencies and build assets
+# Instalar dependencias Node y buildear assets
 RUN npm ci && npm run build
 
-# Copy rest of application
-COPY . .
-
-# Cache Laravel config
+# Cachear config de Laravel
 RUN php artisan config:cache \
     && php artisan route:cache \
     && php artisan view:cache
