@@ -26,7 +26,7 @@ jobs:
 
       - name: Build React assets
         run: |
-          npm ci --omit=dev
+          npm ci
           npm run build
 
       - name: Sync files to InfinityFree via FTP
