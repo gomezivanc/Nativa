@@ -1,0 +1,43 @@
+name: Deploy to InfinityFree
+
+on:
+  push:
+    branches: [ main ]   # Cambia a "master" si usas esa rama
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'   # Ajusta según tu versión
+          tools: composer:v2
+
+      - name: Install Composer dependencies
+        run: composer install --optimize-autoloader --no-dev
+
+      - name: Build React assets
+        run: |
+          npm ci
+          npm run build
+
+      - name: Sync files to InfinityFree via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.FTP_DIRECTORY }}
+          # Excluir carpetas pesadas o innecesarias
+          exclude: |
+            **/.git/**
+            **/node_modules/**
+            **/.env
+            **/storage/framework/cache/**
+            **/storage/framework/sessions/**
+            **/storage/framework/views/**
