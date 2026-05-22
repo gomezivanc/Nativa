@@ -52,9 +52,6 @@ RUN COMPOSER_ALLOW_SUPERUSER=1 composer install \
 # Instalar dependencias Node y buildear assets
 RUN npm ci && npm run build
 
-# Cachear config de Laravel
-RUN php artisan config:cache \
-    && php artisan route:cache \
-    && php artisan view:cache
+# NADA de config:cache ni route:cache acá — se hace en el CMD con las variables reales
 
-CMD ["sh", "-c", "php artisan migrate --force && php -S 0.0.0.0:${PORT:-8080} -t public"]
+CMD ["sh", "-c", "php artisan config:clear && php artisan route:clear && php artisan view:clear && php artisan config:cache && php artisan route:cache && php artisan view:cache && php artisan migrate --force && php -S 0.0.0.0:${PORT:-8080} -t public"]
