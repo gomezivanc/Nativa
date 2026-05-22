@@ -2,11 +2,12 @@ name: Deploy to InfinityFree
 
 on:
   push:
-    branches: [ main ]   # Cambia a "master" si usas esa rama
+    branches: [ main ]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     steps:
       - name: Checkout code
@@ -15,15 +16,17 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.3'   # Ajusta según tu versión
+          php-version: '8.3'
           tools: composer:v2
 
       - name: Install Composer dependencies
-        run: composer install --optimize-autoloader --no-dev
+        run: composer install --optimize-autoloader --no-dev --prefer-dist
+        env:
+          COMPOSER_NO_INTERACTION: 1
 
       - name: Build React assets
         run: |
-          npm ci
+          npm ci --omit=dev
           npm run build
 
       - name: Sync files to InfinityFree via FTP
@@ -33,11 +36,14 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: ${{ secrets.FTP_DIRECTORY }}
-          # Excluir carpetas pesadas o innecesarias
           exclude: |
             **/.git/**
+            **/.github/**
             **/node_modules/**
             **/.env
             **/storage/framework/cache/**
             **/storage/framework/sessions/**
             **/storage/framework/views/**
+            **/storage/logs/**
+            **/tests/**
+            **/vendor/google/apiclient-services/src/!(Gmail|Gmail.php)**
