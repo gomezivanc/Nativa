@@ -124,14 +124,14 @@ Route::middleware(['auth'])->group(function () {
     Route::get('configuration/third-list', [ThirdsController::class,'list'])->name('third.list');
     Route::get('configuration/third-export', [ThirdsController::class, 'export'])->name('third.export');
 
-    Route::resource('configuration/distribution', DistributionUnitController::class);
+    Route::resource('configuration/distribution', DistributionUnitController::class)->except(['show']);
     Route::get('configuration/distribution-list', [DistributionUnitController::class, 'list'])->name('distribution.list');
     Route::get('configuration/distribution/{id}', [DistributionUnitController::class, 'show'])->name('distribution.show');
     Route::get('configuration/distribution-export', [DistributionUnitController::class, 'export'])->name('distribution.export');
     Route::get('configuration/distribution-listFull', [DistributionUnitController::class, 'listFull'])->name('distribution.listFull');
 
     // Mail Configs Routes
-    Route::resource('configuration/mail_configs', ConfigureMailController::class);
+    Route::resource('configuration/mail_configs', ConfigureMailController::class)->except(['show']);
     Route::get('configuration/mail_configs-list', [ConfigureMailController::class, 'mailConfigList'])->name('mail_configs.list');
     Route::get('configuration/mail_configs/{id}', [ConfigureMailController::class, 'mailConfigShow'])->name('mail_configs.show');
 
