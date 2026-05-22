@@ -38,15 +38,16 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 WORKDIR /app
 
-# Copy composer files first for layer caching
+# Copy composer files
 COPY composer.json composer.lock ./
 
-# Install PHP dependencies
+# Install PHP dependencies ignorando restricciones de plataforma del lock generado en Windows
 RUN COMPOSER_ALLOW_SUPERUSER=1 composer install \
     --optimize-autoloader \
     --no-dev \
     --prefer-dist \
-    --no-interaction
+    --no-interaction \
+    --ignore-platform-reqs
 
 # Copy package files
 COPY package.json package-lock.json ./
