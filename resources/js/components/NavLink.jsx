@@ -7,8 +7,8 @@ export default function NavLink({ href, active, onClick, children }) {
             onClick={onClick}
             className={
                 active
-                    ? 'inline-flex items-center px-1 pt-1 border-b-2 border-gray-300 text-sm font-medium leading-5 text-gray-900 focus:outline-none focus:border-gray-700 transition duration-150 ease-in-out'
-                    : 'inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out'
+                    ? 'inline-flex items-center px-1 pt-1 text-sm font-medium leading-5 text-ibg-900 dark:text-ibg-300 border-b-2 border-ibg-900 dark:border-ibg-400 focus:outline-none transition duration-150 ease-in-out'
+                    : 'inline-flex items-center px-1 pt-1 text-sm font-medium leading-5 text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:border-slate-300 dark:hover:border-slate-600 border-b-2 border-transparent focus:outline-none transition duration-150 ease-in-out'
             }
         >
             {children}

@@ -3,35 +3,33 @@ import { DecisionNode } from "./ConditionalNode";
 import { FlowNode } from "./Node";
 import { FlowNodeSuccess } from "./NodeSucces";
 
-// 🔹 Estilo para nodos ovalados (Inicio y Fin)
-const ovalNodeStyle = {
-    padding: "10px",
-    background: "#2E86C1", // Azul
-    color: "#fff",
-    borderRadius: "100%", // Hace que sea ovalado
-    border: "2px solid #1B4F72",
-    textAlign: "center",
-    fontSize: "8px",
-    width: "40px",
-};
-
-// 🔹 Componente de Nodo Personalizado
+// Nodo Start/End — forma ovalada con paleta moderna
 const StartEndNode = ({ data }) => {
+    const isStart = data.isStart;
     return (
-        <div style={ovalNodeStyle}>
-            {data.isStart ? (
-                <Handle type="source" position={Position.Bottom} />
+        <div
+            className="flex items-center justify-center text-center text-white text-[10px] font-bold shadow-lg"
+            style={{
+                width: '44px',
+                height: '44px',
+                borderRadius: '50%',
+                background: 'linear-gradient(135deg, #3c648b, #1e3a5f)',
+                border: '2px solid #d4a843',
+                boxShadow: '0 4px 14px rgba(30,58,95,0.35)',
+            }}
+        >
+            {isStart ? (
+                <Handle type="source" position={Position.Bottom} style={{ background: '#d4a843', width: 8, height: 8 }} />
             ) : (
-                <Handle type="target" position={Position.Top} />
+                <Handle type="target" position={Position.Top} style={{ background: '#d4a843', width: 8, height: 8 }} />
             )}
-            <strong>{data.label}</strong>
+            <span className="leading-tight px-1">{data.label}</span>
         </div>
     );
 };
 
-// 🔹 Registrar el nodo personalizado
-export const nodeTypes = { 
-    startEndNode: StartEndNode ,
+export const nodeTypes = {
+    startEndNode: StartEndNode,
     decisionNode: DecisionNode,
     flowNode: FlowNode,
     flowNodeSucces: FlowNodeSuccess,

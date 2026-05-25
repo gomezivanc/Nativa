@@ -14,7 +14,6 @@ import { InertiaProgress } from '@inertiajs/progress';
 import Guest from "./Layouts/GuestLayout";
 import Authenticated from "./Layouts/AuthenticatedLayout";
 import "primereact/resources/themes/viva-light/theme.css";
-import { useToastStore } from '@/stores/toastStore.js'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { LoadingProvider } from './Context/preloadContext';
@@ -22,11 +21,25 @@ import LoadingIndicator from './Context/Preload';
 import 'quill/dist/quill.snow.css';
 
 InertiaProgress.init({
-    color: '#ffffff',
+    color: '#d4a843',
     showSpinner: true,
 });
 
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
+
+// Initialize theme: always light by default, then check localStorage
+const initTheme = () => {
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    // Default light unless user explicitly saved dark
+    const isDark = saved === 'dark' || (!saved && prefersDark && saved !== 'light');
+    if (isDark) {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark');
+    }
+};
+initTheme();
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
@@ -62,6 +75,6 @@ createInertiaApp({
     },
     progress: {
         delay: 250,
-        color: '#4B5563',
+        color: '#d4a843',
     },
 });
