@@ -12,4 +12,4 @@ npm-debug.log
 yarn-error.log
 public/js/app.js
 centralizado/app/Helpers/Equivalencias.php
-package-lock.json
+# package-lock.json — do not ignore, needed for CI (npm ci)
