@@ -32,7 +32,7 @@
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.woff2"
   },
   "node_modules/chart.js/auto/auto.js": {
-    "file": "assets/auto-6bf74f56.js",
+    "file": "assets/auto-8f368c2f.js",
     "isDynamicEntry": true,
     "src": "node_modules/chart.js/auto/auto.js"
   },
@@ -97,7 +97,7 @@
     "src": "node_modules/primereact/resources/themes/viva-light/fonts/poppins-v15-latin-ext_latin-regular.woff2"
   },
   "node_modules/quill/quill.js": {
-    "file": "assets/quill-87e066be.js",
+    "file": "assets/quill-e6b991a2.js",
     "imports": [
       "resources/js/app.jsx"
     ],
@@ -105,12 +105,12 @@
     "src": "node_modules/quill/quill.js"
   },
   "resources/css/app.css": {
-    "file": "assets/app-1bd6c493.css",
+    "file": "assets/app-b2626b10.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
   "resources/js/app.css": {
-    "file": "assets/app-49c2ca70.css",
+    "file": "assets/app-75359cba.css",
     "src": "resources/js/app.css"
   },
   "resources/js/app.jsx": {
@@ -140,13 +140,13 @@
       "assets/poppins-v15-latin-ext_latin-700-9b3ac8ce.woff"
     ],
     "css": [
-      "assets/app-49c2ca70.css"
+      "assets/app-75359cba.css"
     ],
     "dynamicImports": [
       "node_modules/chart.js/auto/auto.js",
       "node_modules/quill/quill.js"
     ],
-    "file": "assets/app-f1b3968f.js",
+    "file": "assets/app-e2d3714f.js",
     "isEntry": true,
     "src": "resources/js/app.jsx"
   }
