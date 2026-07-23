@@ -10,8 +10,7 @@ class Equivalencias
 
 	public static function urlProduccion()
 	{
-		// return env('APP_URL')."super_bien/centralizado-sime/public/";
-		return 'http://181.49.45.246:8085/cortolima/public/';
+		return env('APP_URL');
 	}
 
 	// public static function urlDinamico()
