@@ -141,114 +141,122 @@ const Logins = ({ status, props, success, googleReCaptchaProps, }) => {
             <Toast ref={toast} />
             <Head title="Inicio" />
 
+            {/* Status / Flash messages */}
             {status && (
-                <div className="mb-4 font-medium text-sm text-green-600">
+                <div className="mb-4 font-medium text-sm text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-lg px-4 py-2.5 text-center">
                     {status}
                 </div>
             )}
 
             {flash?.message && (
-                <div className="mb-4 text-green-600 font-semibold text-center">
+                <div className="mb-4 text-emerald-700 font-semibold text-center bg-emerald-50 border border-emerald-200 rounded-lg px-4 py-2.5">
                     {flash.message}
                 </div>
             )}
-            <div className="flex-col w-full h-[100%] centrar">
-                <div className="centrar -mt-20 mb-5">
-                    <img
-                        src="images/PNG/"
-                        className="hidden max-lg:flex h-28 max-lg:h-16 "
+
+            {/* Título y subtítulo */}
+            <div className="text-center mb-8">
+                <h1 className="text-2xl sm:text-3xl font-bold text-slate-800">
+                    {translations.auth.login.login}
+                </h1>
+                <p className="mt-2 text-sm text-slate-500">
+                    Ingresa tus credenciales para acceder al sistema
+                </p>
+            </div>
+
+            {/* Mensaje de éxito */}
+            {success && (
+                <div className="w-full flex justify-center mb-6">
+                    <div className="flex items-center gap-2 px-4 py-2 text-sm text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-lg">
+                        <Icon className="w-4 h-4 text-emerald-600 fill-current shrink-0" name="chulo" />
+                        <span className="font-medium">{success}</span>
+                    </div>
+                </div>
+            )}
+
+            {/* Formulario */}
+            <form onSubmit={submit} className="space-y-5">
+                {/* Campo: Usuario */}
+                <div>
+                    <InputLabel
+                        forInput="usuario"
+                        value={translations.auth.login.user}
+                        className="!text-slate-700 font-semibold text-sm"
+                    />
+                    <TextInput
+                        id="usuario"
+                        type="text"
+                        name="usuario"
+                        value={data.usuario}
+                        errors={errors.usuario}
+                        className="mt-1.5 block w-full border-slate-300 text-slate-800 placeholder-slate-400 rounded-lg focus:border-ibg-500 focus:ring-1 focus:ring-ibg-500 transition-all duration-200"
+                        autoComplete="usuario"
+                        isFocused={true}
+                        handleChange={onHandleChange}
+                        error={inputErrors.usuario}
+                        placeholder="Escriba su usuario"
                     />
                 </div>
-                <div className="w-full">
-                    <div className="w-full centrar flex-col">
-                        <div className="text-4xl max-md:text-lg max-xl:text-2xl max-2xl:text-3xl font-bold text-[#002F65]">
-                            {translations.auth.login.login}
-                        </div>
-                    </div>
-                    {success && (
-                        <div className="w-full centrar">
-                            <div className="centrar w-1/2 p-1 text-sm text-green-800 rounded-lg bg-green-50 space-x-2">
-                                <Icon
-                                    className="w-4 h-10 text-green-800 fill-current group-hover:text-gray-300 focus:text-gray-600"
-                                    name="chulo"
-                                />
-                                <div className="font-medium">{success}</div>
-                            </div>
-                        </div>
+
+                {/* Campo: Contraseña */}
+                <div>
+                    <InputLabel
+                        forInput="password"
+                        value={translations.auth.login.password}
+                        className="!text-slate-700 font-semibold text-sm"
+                    />
+                    <Password
+                        id="password"
+                        name="password"
+                        errors={errors.password}
+                        value={data.password}
+                        className="mt-1.5 block w-full"
+                        inputClassName="border-slate-300 text-slate-800 placeholder-slate-400 rounded-lg focus:border-ibg-500 focus:ring-1 focus:ring-ibg-500 transition-all duration-200"
+                        autoComplete="current-password"
+                        handleChange={onHandleChange}
+                        error={inputErrors.password}
+                        placeholder="Contraseña"
+                    />
+                    {inputErrors.password && (
+                        <InputError className="text-red-500 mt-1.5">{errors.password}</InputError>
                     )}
-
-                    <form onSubmit={submit}>
-                        <div className="centrar flex-col lg:mt-1">
-                            <div className="w-3/5 max-xl:w-full ">
-                                <InputLabel
-                                    forInput="usuario"
-                                    value={translations.auth.login.user}
-                                    className="max-md:text-xs max-lg:text-base max-2xl:text-lg"
-                                />
-                                <TextInput
-                                    id="usuario"
-                                    type="text"
-                                    name="usuario"
-                                    value={data.usuario}
-                                    errors={errors.usuario}
-                                    className="mt-1 block w-full"
-                                    autoComplete="usuario"
-                                    isFocused={true}
-                                    handleChange={onHandleChange}
-                                    error={inputErrors.usuario}
-                                    placeholder="Escriba su usuario"
-                                />
-                            </div>
-                            <div className="w-3/5 max-xl:w-full">
-                                <InputLabel
-                                    forInput="password"
-                                    value={translations.auth.login.password}
-                                    className="max-md:text-xs max-lg:text-base max-2xl:text-lg"
-                                />
-                                <div className="relative">
-                                    <Password
-                                        id="password"
-                                        type={passwordInputType}
-                                        name="password"
-                                        errors={errors.password}
-                                        value={data.password}
-                                        className="w-full" // Agrega un padding derecho para acomodar el botón
-                                        autoComplete="current-password"
-                                        handleChange={onHandleChange}
-                                        error={inputErrors.password}
-                                        placeholder="Contraseña"
-                                    />
-                                </div>
-
-                                {inputErrors.password && (
-                                    <InputError className="text-red-500">
-                                        {errors.password}
-                                    </InputError>
-                                )}
-                            </div>
-                        </div>
-                        {/* Seccion olvidaste tu contraseña */}
-                        <div className="centrar block mt-4 lg:mt-2 max-sm:mt-3">
-                            <Link
-                                href={route("recovery")}
-                                className="underline text-gray-600 hover:text-gray-900 rounded-md font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 text-xl max-md:text-sm max-2xl:text-lg"
-                            >
-                                {translations.auth.login.remember_passsword}
-                            </Link>
-                        </div>
-
-                        {/* Seccion boton ingresar */}
-                        <div className="centrar flex-col mt-20 max-md:mt-12 lg:mt-4">
-                            <PrimaryButton
-                                className="centrar ml-3 w-3/6 h-12 max-2xl:w-3/6 max-md:h-8 max-2xl:h-10 "
-                                processing={processing}
-                            >
-                                {translations.auth.login.enter}
-                            </PrimaryButton>
-                        </div>
-                    </form>
                 </div>
-            </div>
+
+                {/* Recordarme + Olvidaste tu contraseña */}
+                <div className="flex items-center justify-between pt-1">
+                    <label className="flex items-center cursor-pointer group">
+                        <input
+                            type="checkbox"
+                            name="remember"
+                            checked={data.remember}
+                            onChange={onHandleChange}
+                            className="h-4 w-4 rounded border-slate-300 text-ibg-500 focus:ring-ibg-400 focus:ring-offset-0 cursor-pointer transition-all duration-200"
+                        />
+                        <span className="ml-2.5 text-sm text-slate-500 group-hover:text-slate-700 transition-colors duration-200">
+                            Recordarme
+                        </span>
+                    </label>
+                    <Link
+                        href={route("recovery")}
+                        className="text-sm text-ibg-600 hover:text-ibg-900 transition-colors duration-200 font-medium underline underline-offset-2"
+                    >
+                        {translations.auth.login.remember_passsword}
+                    </Link>
+                </div>
+
+                {/* Botón Ingresar */}
+                <div className="pt-2">
+                    <PrimaryButton
+                        className="w-full flex items-center justify-center gap-2.5 py-3 text-base"
+                        processing={processing}
+                    >
+                        {translations.auth.login.enter}
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                    </PrimaryButton>
+                </div>
+            </form>
         </>
     );
 };
