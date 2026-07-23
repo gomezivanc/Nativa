@@ -71,6 +71,22 @@
     @apply w-7 h-7 -ml-[0.15rem] -mt-[0.15rem] text-green-600 fill-current group-hover:text-gray-300 focus:text-gray-600
 }
 
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
 :root {
     font-size: 14px; /* O 13px si lo quieres aún más compacto */
 }
