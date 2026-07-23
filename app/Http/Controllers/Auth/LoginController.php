@@ -157,9 +157,7 @@ class LoginController extends Controller
     { //cerrar sesion
         Auth::logout();
         $request->session()->invalidate();
-        $url = $this->rutaProduccion . '';
-        return Redirect::to($url);
-        // return redirect('/');
+        return redirect('/');
     }
 
     public function recovery()
