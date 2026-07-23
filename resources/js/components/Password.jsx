@@ -1,8 +1,8 @@
 import { forwardRef, useEffect, useRef } from 'react';
 import {Password} from "primereact/password";
 
-export default forwardRef(function TextInput(
-    { type = 'text', name, id, value, className, autoComplete, required, isFocused, handleChange, placeholder,error,errors = [] },
+export default forwardRef(function PasswordInput(
+    { type = 'text', name, id, value, className, inputClassName, autoComplete, required, isFocused, handleChange, placeholder,error,errors = [] },
     ref
 ) {
     const input = ref ? ref : useRef();
@@ -16,7 +16,7 @@ export default forwardRef(function TextInput(
     return (
         <div className="flex flex-col items-start">
             <Password
-                inputClassName='w-full'
+                inputClassName={`w-full ${inputClassName || ''}`}
                 name={name}
                 feedback={false}
                 id={id}
