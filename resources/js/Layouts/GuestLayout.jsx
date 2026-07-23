@@ -1,21 +1,28 @@
-import ApplicationLogo from '@/components/ApplicationLogo';
-import { Link , usePage} from "@inertiajs/react";
+import { usePage } from "@inertiajs/react";
 
 export default function Guest({ children }) {
     const { ziggy } = usePage().props;
     return (
-        <div className="w-full h-screen flex items-center justify-center bg-cover bg-left-bottom" style={{backgroundImage: ziggy?.url? `url(${ziggy.url}/images/SVG/fondo.svg)`: 'none' }}>
-            <div className='w-5/6 h-5/6 rounded-[20px] drop-shadow bg-white grid grid-cols-2 max-lg:grid-cols-1 overflow-hidden'>
+        <div className="relative min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-ibg-500 via-ibg-400 to-ibg-300 overflow-hidden p-4 sm:p-6 lg:p-8">
+            {/* Círculos decorativos de fondo */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+                <div className="absolute -top-40 -right-40 w-[30rem] h-[30rem] bg-amber-450/20 rounded-full blur-3xl" />
+                <div className="absolute -bottom-40 -left-40 w-[30rem] h-[30rem] bg-terracotta-500/20 rounded-full blur-3xl" />
+            </div>
 
-                <div className='flex items-start justify-center pt-10 p-6 max-lg:hidden'>
-                    <img
-                        src={ziggy.url +"/images/PNG/gestion_documental_login.png"}
-                        alt="Gestion documental"
-                        className='object-contain max-w-[70%] max-h-[70%] w-auto h-auto'
-                    />
-                </div>
+            {/* Card glassmorphism */}
+            <div className="relative w-full max-w-md animate-fadeInUp">
+                <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/30 p-8 sm:p-10">
+                    {/* Logo NativaSoft */}
+                    <div className="flex justify-center mb-8">
+                        <img
+                            src={ziggy?.url ? `${ziggy.url}/images/SVG/Nativa.svg` : ''}
+                            alt="NativaSoft"
+                            className="h-14 sm:h-16 w-auto"
+                        />
+                    </div>
 
-                <div className='flex items-center justify-start pt-10 p-4 overflow-hidden'>
+                    {/* Contenido inyectado (Login / Recovery) */}
                     {children}
                 </div>
             </div>
